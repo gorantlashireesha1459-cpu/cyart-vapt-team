@@ -1,1 +1,84 @@
-Documentation files
+# Week 2 – Vulnerability Assessment and Penetration Testing (VAPT)
+
+## Objective
+To perform a complete Vulnerability Assessment and Penetration Testing (VAPT) cycle on a lab environment using open-source tools.
+
+---
+
+## Tools Used
+- Kali Linux
+- Nmap
+- Nikto
+- Metasploit Framework
+
+---
+
+## Workflow and Steps
+
+### Step 1: Network Scanning
+- Identified live host using Nmap
+- Enumerated open ports and services
+
+Command used:
+```bash
+nmap -sV 192.168.56.100
+Step 2: Web Vulnerability Scanning
+Performed web scan using Nikto
+
+Identified outdated Apache, missing headers, directory listing
+
+Command used:
+
+bash
+Copy code
+nikto -h http://192.168.56.100
+Step 3: Vulnerability Analysis
+Prioritized vulnerabilities using CVSS scoring
+
+Validated findings manually to avoid false positives
+
+Step 4: Exploitation
+Used Metasploit to exploit Samba vulnerability
+
+Achieved remote command execution with root access
+
+Exploit used:
+
+bash
+Copy code
+exploit/multi/samba/usermap_script
+Step 5: Post-Exploitation
+Verified root access
+
+Collected evidence from target system
+
+Generated SHA256 hash to maintain integrity
+
+Command used:
+
+bash
+Copy code
+sha256sum evidence.txt
+Result
+The target system was successfully compromised with root-level access, proving the presence of critical security vulnerabilities.
+
+Conclusion
+This task demonstrates the importance of regular vulnerability assessments and timely patching to prevent system compromise.
+
+yaml
+Copy code
+
+Click **Commit changes** ✅
+
+---
+
+# 🔹 STEP 5: (Optional) Main Repository README
+
+In root `README.md`, you can write:
+
+```markdown
+# cyart-vapt-team
+
+This repository contains VAPT documentation and workflow submissions.
+
+- Week 2: Vulnerability Assessment and Penetration Testing
