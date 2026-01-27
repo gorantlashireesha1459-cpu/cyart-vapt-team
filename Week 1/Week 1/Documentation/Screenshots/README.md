@@ -1,0 +1,1 @@
+Screenshots supporting exploitation and privilege escalation
